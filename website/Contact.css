@@ -1,0 +1,108 @@
+body{
+    background: url("images/teeeea.jpg");
+    background-size: cover;
+}
+form label{
+    color: black;
+    font-size: x-large;
+}
+h1{
+    font-size: xxx-large;
+    color: black;
+    width: 400px;
+    margin: 0 auto;
+}
+form{
+    margin: 0 auto;
+    background: none;
+    width: 890px;
+    padding: 140px;
+    height: 310px;
+    font-size: x-large;
+}
+.MESSEGE{
+    width: 580px;
+    margin: 0 auto;
+    padding-bottom: 200px;
+    border-radius: 20px 20px;
+}
+form input{
+    margin: 0 auto;
+    border-radius: 20px 20px;
+}
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    height: 100vh;
+    background: url("images/teeeea.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    box-shadow: 0 5px 10px black;
+}
+
+header .logo {
+    font-size: 20px;
+    font-weight: 900;
+    color: black;
+    transition: .5s;
+}
+
+header .logo:hover {
+    transform: scale(1.2);
+}
+
+header nav ul li {
+    position: relative;
+    float: left;
+}
+header nav ul li a {
+    padding: 15px;
+    color: black;
+    font-size: 16px;
+    display: block;
+}
+header nav ul li a:hover {
+    background: black;
+    color: white;
+}
+
+nav ul li ul {
+    position: absolute;
+    left: 0;
+    width: 180px;
+    background: white;
+    display: none;
+}
+
+nav ul li ul li {
+    width: 100%;
+    border: 1px solid rgba(0,0,0,.1);
+}
+
+nav ul li:hover > ul {
+    display: initial;
+}

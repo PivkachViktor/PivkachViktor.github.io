@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+ul.price li .price a img {
+    width: 280px;
+    height: 220px;
+    border-radius: 8px;
+}
+
+ul.price li {
+    width: 280px;
+    float:  left;
+    margin: 0 15px 15px 0;
+    transition: .5s;
+}
+
+h1.title{
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 48px;
+    color: #ef8080;
+}
+
+h1.title:after{
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 200px;
+    background: none;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+ul.price li .price {
+    position: relative;
+}
+
+ul.price li .price span{
+    position: absolute;
+    display: block;
+    width: 100%;
+    bottom: 4px;
+    left: 0;
+    font-size: 18px;
+    color: antiquewhite;
+    background: #333;
+    background: rgba(0,0,0,.7);
+    border-radius: 0 0 8px 8px;
+}
+
+ul.price li.price span strong{
+    display: block;
+    padding: 10px 10px 0 10px;
+    font-style: italic;
+    color: white;
+}
+
+ul.price li:hover {
+    transform: translateY(-5px);
+}
+
+body{
+    height: 100vh;
+    background: url("images/teeeea.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    box-shadow: 0 5px 10px black;
+}
+
+header .logo {
+    font-size: 20px;
+    font-weight: 900;
+    color: black;
+    transition: .5s;
+}
+
+header .logo:hover {
+    transform: scale(1.9);
+}
+
+header nav ul li {
+    position: relative;
+    float: left;
+}
+header nav ul li a {
+    padding: 15px;
+    color: black;
+    font-size: 16px;
+    display: block;
+}
+header nav ul li a:hover {
+    background: black;
+    color: white;
+}
+
+nav ul li ul {
+    position: absolute;
+    left: 0;
+    width: 180px;
+    background: white;
+    display: none;
+}
+
+ nav ul li ul li {
+     width: 100%;
+     border: 1px solid rgba(0,0,0,.1);
+ }
+
+ nav ul li:hover > ul {
+     display: inline;
+ }

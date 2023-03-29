@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<header>
+
+    <a href="Home.html"  class="logo">MisterTea</a>
+    <nav>
+        <ul>
+            <li><a href ="Home.html" >Дім</a></li>
+            <li><a href="#">Чай &blacktriangledown;</a>
+                <ul>
+                    <li><a href="#">Зелений</a></li>
+                    <li><a href="#">Улун</a></li>
+                    <li><a href="#">Чорний</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Закуски до чаю</a></li>
+            <li><a href="login.html">Увійти</a></li>
+            <li><a href="Contacts.html" >Контакт</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+
+      <section>
+        <div class="form-box">
+            <div class="from-value">
+              <form>
+                <h2>Login</h2>
+                <div class="inputbox">
+
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="inputbox">
+                  <ion-icon name="lock-closed-outline"></ion-icon>
+                  <input type="password" id="password" name="password" required>
+                  <label for="password">Password</label>
+                </div>
+                <div class="forget">
+                  <label for="checkbox"><input type="checkbox" id="checkbox">Remember Me <a href="#">Forget Password</a></label>
+                </div>
+                <button>Log in</button>
+                <div class="register">
+                  <p>Don't heve a account <a href="registr.html">Register</a> </p>
+                </div>
+              </form>
+            </div>
+        </div>
+      </section>
+      <script  type = "module"  src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script  nomodule  src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+</html>

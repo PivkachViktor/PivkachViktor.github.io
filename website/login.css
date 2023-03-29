@@ -1,0 +1,237 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+
+    background: url('images/teeeea.jpg')no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.form-box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+h2{
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+.inputbox{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+}
+.inputbox label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+input:focus ~ label,
+input:valid ~ label{
+    top: -5px;
+}
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding:0 35px 0 5px;
+    color: #fff;
+}
+.inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 20px;
+}
+.forget{
+    margin: -15px 0 15px ;
+    font-size: .9em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forget label input{
+    margin-right: 3px;
+
+}
+.forget label a{
+    color: #fff;
+    text-decoration: none;
+}
+.forget label a:hover{
+    text-decoration: underline;
+}
+button{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+.register{
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.register p a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+.register p a:hover{
+    text-decoration: underline;
+}
+
+
+
+
+ul.price li .price a img {
+    width: 280px;
+    height: 220px;
+    border-radius: 8px;
+}
+
+ul.price li {
+    width: 280px;
+    float:  left;
+    margin: 0 15px 15px 0;
+    transition: .5s;
+}
+
+h1.title{
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 48px;
+    color: #ef8080;
+}
+
+h1.title:after{
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 200px;
+    background: none;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+ul.price li .price {
+    position: relative;
+}
+
+ul.price li .price span{
+    position: absolute;
+    display: block;
+    width: 100%;
+    bottom: 4px;
+    left: 0;
+    font-size: 18px;
+    color: antiquewhite;
+    background: #333;
+    background: rgba(0,0,0,.7);
+    border-radius: 0 0 8px 8px;
+}
+
+ul.price li.price span strong{
+    display: block;
+    padding: 10px 10px 0 10px;
+    font-style: italic;
+    color: white;
+}
+
+ul.price li:hover {
+    transform: translateY(-5px);
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    box-shadow: 0 5px 10px black;
+}
+
+header .logo {
+    font-size: 20px;
+    font-weight: 900;
+    color: black;
+    transition: .5s;
+}
+
+header .logo:hover {
+    transform: scale(1.9);
+}
+
+header nav ul li {
+    position: relative;
+    float: left;
+}
+header nav ul li a {
+    padding: 15px;
+    color: black;
+    font-size: 16px;
+    display: block;
+}
+header nav ul li a:hover {
+    background: black;
+    color: white;
+}
+
+nav ul li ul {
+    position: absolute;
+    left: 0;
+    width: 180px;
+    background: white;
+    display: none;
+}
+
+nav ul li ul li {
+    width: 100%;
+    border: 1px solid rgba(0,0,0,.1);
+}
+
+nav ul li:hover > ul {
+    display: inline;
+}
+
