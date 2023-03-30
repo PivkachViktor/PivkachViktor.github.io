@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    justify-content: center;
+    background-color: #f63232;
+
+}
+
+
+
+form{
+    position: relative;
+    width: 440px;
+    padding: 20px;
+    height: 420px;
+    border: 2px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(20px);
+    background-color: crimson;
+}
+
+
+
+form input{
+    justify-content: center;
+    text-align: center;
+    margin-left: 55px;
+    font-size: large;
+}
+
+
+.field {
+    clear:both;
+    text-align:right;
+    display: flex;
+}
+label {
+    float:left;
+    color: white;
+    font-size: 20px;
+}
+.main {float:left}
