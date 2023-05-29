@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tournament Table</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+<h1>Турнір</h1>
+
+<table id="usersTable">
+  <thead>
+  <tr>
+    <th>Code</th>
+    <th>Full Name</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Country</th>
+    <th>Mark</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<h2>Add User</h2>
+<form id="addUserForm">
+  <label for="code">Code:</label>
+  <input type="text" id="code" required><br>
+
+  <label for="fullName">Full Name:</label>
+  <input type="text" id="fullName" required><br>
+
+  <label for="gender">Gender:</label>
+  <input type="text" id="gender" required><br>
+
+  <label for="age">Age:</label>
+  <input type="number" id="age" required><br>
+
+  <label for="country">Country:</label>
+  <input type="text" id="country" required><br>
+
+  <label for="mark">Mark:</label>
+  <input type="number" id="mark" required><br>
+
+  <button type="submit">Add User</button>
+</form>
+
+<script>
+  class TournamentUser {
+    constructor(code, name, gender, age, country, mark) {
+      this.code = code;
+      this.name = name;
+      this.gender = gender;
+      this.age = age;
+      this.country = country;
+      this.mark = mark;
+    }
+  }
+
+  class TournamentUsers {
+    constructor() {
+      this.item = [];
+    }
+
+    add(user) {
+      if (!(user instanceof TournamentUser))
+        throw `${user} is not an instance of TournamentUser`;
+      this.item.push(user);
+    }
+
+    getById(id) {
+      return this.item.find(user => user.code == id);
+    }
+
+    update(id, newUser) {
+      let user = this.getById(id);
+      if (!user)
+        throw "Not found";
+      for (let k of ["name", "gender", "age", "country", "mark"]) {
+        if (newUser[k])
+          user[k] = newUser[k];
+      }
+    }
+
+    delete(id) {
+      let userIndex = this.item.findIndex(user => user.code == id);
+      if (userIndex == -1)
+        throw "Not found";
+      this.item.splice(userIndex, 1);
+    }
+  }
+
+  const usersTable = document.getElementById('usersTable');
+  const addUserForm = document.getElementById('addUserForm');
+
+  let tournamentUsers = new TournamentUsers();
+
+  function refreshUsersTable(usersList) {
+    const tbody = usersTable.getElementsByTagName('tbody')[0];
+    tbody.innerHTML = '';
+
+    for (let user of usersList.item) {
+      const row = document.createElement('tr');
+      const codeCell = document.createElement('td');
+      codeCell.textContent = user.code;
+      row.appendChild(codeCell);
+
+      const fullNameCell = document.createElement('td');
+      fullNameCell.textContent = user.name;
+      row.appendChild(fullNameCell);
+
+      const genderCell = document.createElement('td');
+      genderCell.textContent = user.gender;
+      row.appendChild(genderCell);
+
+      const ageCell = document.createElement('td');
+      ageCell.textContent = user.age;
+      row.appendChild(ageCell);
+
+      const countryCell = document.createElement('td');
+      countryCell.textContent = user.country;
+      row.appendChild(countryCell);
+
+      const markCell = document.createElement('td');
+      markCell.textContent = user.mark;
+      row.appendChild(markCell);
+
+      const actionCell = document.createElement('td');
+      const deleteButton = document.createElement('button');
+      deleteButton.className = 'delete-button';
+      deleteButton.textContent = 'Delete';
+      deleteButton.addEventListener('click', () => {
+        tournamentUsers.delete(user.code);
+        row.remove();
+      });
+      actionCell.appendChild(deleteButton);
+      row.appendChild(actionCell);
+
+      tbody.appendChild(row);
+    }
+  }
+
+  addUserForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const code = addUserForm.code.value;
+    const fullName = addUserForm.fullName.value;
+    const gender = addUserForm.gender.value;
+    const age = parseFloat(addUserForm.age.value);
+    const country = addUserForm.country.value;
+    const mark = parseInt(addUserForm.mark.value);
+
+    const user = new TournamentUser(code, fullName, gender, age, country, mark);
+
+    tournamentUsers.add(user);
+
+    refreshUsersTable(tournamentUsers);
+    addUserForm.reset();
+  });
+
+  let firstUser = new TournamentUser(5621, "Новікова Руслана", "Жінка", 22, "Україна", 33);
+  let secondUser = new TournamentUser(7305, "Шимон Артем", "Чоловік", 25, "Словаччина", 26);
+  tournamentUsers.add(firstUser);
+  tournamentUsers.add(secondUser);
+  refreshUsersTable(tournamentUsers);
+</script>
+</body>
+</html>
